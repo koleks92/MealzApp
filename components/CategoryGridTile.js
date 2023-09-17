@@ -44,6 +44,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 8,
+        borderWidth: 1,
+        borderColor: "#7a7a7a"
     },
     title: {
         fontWeight: 'bold',
