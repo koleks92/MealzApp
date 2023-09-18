@@ -24,9 +24,11 @@ function MealsOverview({ route, navigation }) {
 
     function renderMealItem(itemData) {
         const item = itemData.item;
-
+        
         function onPressHandler() {
-            navigation.navigate('MealDetails');
+            navigation.navigate('MealDetails', {
+            item: item
+            })
         };
 
         const mealItemProps = {
@@ -55,7 +57,8 @@ function MealsOverview({ route, navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16
+        padding: 16,
+        backgroundColor: '#b8b8b8'
     }
 });
 

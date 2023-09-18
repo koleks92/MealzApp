@@ -20,7 +20,7 @@ export default function App() {
         <Stack.Navigator screenOptions={{
           headerStyle: { backgroundColor: "#351401" },
           headerTintColor: "white",
-          contentStyle: { backgroundColor: "#b8b8b8" }
+          contentStyle: { backgroundColor: "#351401" }
         }}>
           <Stack.Screen name="MealsCategories" component={CategoriesScreen} options={{
             title: "Categories",
@@ -47,7 +47,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
