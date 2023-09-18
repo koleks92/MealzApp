@@ -5,12 +5,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+import { Ionicons } from '@expo/vector-icons';
+
 import CategoriesScreen from './screens/Categories';
 import MealsOverview from './screens/MealsOverview';
 import FavoritesScreen from './screens/Favorites';
+import MealDetails from './screens/MealDetails';
 
 import { CATEGORIES } from './data/dummy-data';
-import MealDetails from './screens/MealDetails';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -19,10 +21,20 @@ function DrawerNavigator() {
   return <Drawer.Navigator screenOptions={{
     headerStyle: { backgroundColor: "#351401" },
     headerTintColor: "white",
-    contentStyle: { backgroundColor: "#351401" }
+    contentStyle: { backgroundColor: "#351401" },
+    drawerContentStyle: { backgroundColor: "#351401"},
+    drawerInactiveTintColor: "white",
+    drawerActiveTintColor: "#351401",
+    drawerActiveBackgroundColor: "#e4baa1"
     }}>
-    <Drawer.Screen name="Categories" component={CategoriesScreen} />
-    <Drawer.Screen name="Favorites" component={FavoritesScreen} />
+    <Drawer.Screen name="Categories" component={CategoriesScreen} options={{
+      title: 'All Categories',
+      drawerIcon: ({color, size}) => <Ionicons name="list" color={color} size={size} />
+    }}/>
+    <Drawer.Screen name="Favorites" component={FavoritesScreen} options={{
+      title: 'Favorites',
+      drawerIcon: ({color, size}) => <Ionicons name="heart-outline" color={color} size={size} />
+    }}/>
   </Drawer.Navigator>; 
 };
 
