@@ -5,6 +5,7 @@ import Meal from '../models/meal';
 import MealExtra from '../components/MealExtra';
 import Subtitle from '../components/MealDetail/Subtitle';
 import List from '../components/MealDetail/List';
+import IconButton from '../components/IconButton';
 
 
 function MealDetails ({ route, navigation }) {
@@ -18,7 +19,7 @@ function MealDetails ({ route, navigation }) {
         navigation.setOptions({
             title: item.title,
             headerRight: () => {
-                return <Button title="Here" onPress={headerButtorPressHandler}/>
+                return <IconButton onPress={ headerButtorPressHandler } icon="heart-outline" color="white"/>
             }
         });
     }, [item.title, navigation, headerButtorPressHandler]);
