@@ -1,3 +1,5 @@
+import 'react-native-gesture-handler';
+
 import { Text, View, StyleSheet, Image, ScrollView, Button } from 'react-native';
 import { useLayoutEffect } from 'react';
 
