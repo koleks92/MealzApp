@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, ScrollView, Button } from 'react-native';
 import { useLayoutEffect } from 'react';
 
 import Meal from '../models/meal';
@@ -10,11 +10,18 @@ import List from '../components/MealDetail/List';
 function MealDetails ({ route, navigation }) {
     const item = route.params.item;
 
+    function headerButtorPressHandler() {
+        console.log("Yes!");
+    }
+
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: item.title
+            title: item.title,
+            headerRight: () => {
+                return <Button title="Here" onPress={headerButtorPressHandler}/>
+            }
         });
-    }, [item.title, navigation]);
+    }, [item.title, navigation, headerButtorPressHandler]);
 
     return (
         <ScrollView style={styles.container}>
